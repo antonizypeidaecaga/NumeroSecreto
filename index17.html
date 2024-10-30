@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> numero aleatorio</title>
+
+</head>
+
+<body>
+
+	<h1>Adivinhe o numero!! </h1>
+	<p>tente adivinhar o numero entre 1 a 10</p>
+		<input type="number" id="palpite" placeholder="chute um numero">
+	<button onclick="adivinhar()"> Numero aleatorio</button>
+	<p id = "resultado"></p>
+	<script>
+		let numeroSecreto = Math.floor(Math.random() * 100)+ 1;
+		console.log(numeroSecreto)
+
+		function adivinhar() {
+			let palpite = parseInt(document.getElementById("palpite").value);
+			let resultado = document.getElementById("resultado");
+
+			if ( palpite === numeroSecreto ){
+				resultado.innerText = "Parabens! Você acertou!";
+			} else if ( palpite < numeroSecreto){
+				resultado.innerText = "Tente um numero maior.";
+			} else {
+				resultado.innerText = "Tente um numero menor.";
+			}
+		}
+	</script>
+
+</body>
+
+</html>
